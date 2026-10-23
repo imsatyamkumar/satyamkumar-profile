@@ -1,0 +1,620 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Satyam Kumar | Portfolio</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #07111f;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+header {
+    background: #0c1a2c;
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #1b3a5e;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 25px;
+    color: #1683ff;
+    font-weight: bold;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #42d7ff;
+}
+
+section {
+    padding: 70px 0;
+}
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.hero h1 span,
+h2 span {
+    color: #1683ff;
+}
+
+.hero h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #b4c4d8;
+}
+
+.btn {
+    display: inline-block;
+    padding: 11px 20px;
+    background: #1683ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    margin: 20px 8px 0 0;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #0865d0;
+}
+
+.profile {
+    width: 260px;
+    height: 260px;
+    flex-shrink: 0;
+    border: 4px solid #1683ff;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #10223a;
+    box-shadow: 0 0 30px #1683ff40;
+}
+
+.profile img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 35px;
+}
+
+.about-box {
+    background: #0c1a2c;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #1b3a5e;
+}
+
+.skills-grid,
+.projects-grid,
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background: #0c1a2c;
+    border: 1px solid #1b3a5e;
+    padding: 22px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #1683ff;
+}
+
+.card h3 {
+    color: #42d7ff;
+    margin-bottom: 12px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 15px;
+}
+
+.tags span {
+    background: #102b49;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.project-links {
+    margin-top: 15px;
+}
+
+.project-links a {
+    color: #42d7ff;
+    margin-right: 12px;
+    text-decoration: none;
+}
+
+.experience-box {
+    background: #0c1a2c;
+    padding: 25px;
+    border-left: 4px solid #1683ff;
+    border-radius: 8px;
+}
+
+.experience-box h3 {
+    color: #42d7ff;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.contact-info,
+.contact-form {
+    background: #0c1a2c;
+    border: 1px solid #1b3a5e;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.contact-info p {
+    margin: 15px 0;
+    overflow-wrap: anywhere;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background: #071525;
+    color: white;
+    border: 1px solid #1b3a5e;
+    border-radius: 7px;
+    font: inherit;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+footer {
+    background: #0c1a2c;
+    padding: 22px;
+    text-align: center;
+    border-top: 1px solid #1b3a5e;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 45px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .profile {
+        width: 190px;
+        height: 190px;
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .cert-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <nav class="container">
+        <div class="logo">Software Engineer</div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certificates</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HOME -->
+<section class="container hero" id="home">
+    <div class="hero-content">
+        <p>Hello, I'm</p>
+
+        <h1>Satyam <span>Kumar</span></h1>
+
+        <h3>Full Stack Developer</h3>
+
+        <p>
+            I am a B.Tech CSE graduate passionate about
+            web development, responsive design and building
+            modern websites with clean code.
+        </p>
+
+        <a href="/satyamkumar01.pdf" class="btn" download>
+            Download Resume
+        </a>
+
+        <a href="#projects" class="btn">
+            View Projects
+        </a>
+    </div>
+
+    <div class="profile">
+        <img src="/images.jpeg" alt="Satyam Kumar profile photo">
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">About <span>Me</span></h2>
+
+        <div class="about-box">
+            <p>
+                I am Satyam Kumar, a Computer Science and
+                Engineering graduate from Suresh Gyan Vihar
+                University, Jaipur. I enjoy creating responsive
+                websites and learning new technologies.
+                I have completed a 3-month web design internship
+                and 6 months of Salesforce training.
+            </p>
+
+            <br>
+            <p><b>Education:</b> B.Tech Computer Science</p>
+            <p><b>Location:</b> Jaipur, Rajasthan, India</p>
+            <p><b>Career Goal:</b> Full Stack Developer</p>
+        </div>
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+    <div class="container">
+        <h2 class="section-title">My <span>Skills</span></h2>
+
+        <div class="skills-grid">
+
+            <div class="card">
+                <h3>Frontend Development</h3>
+                <p>Creating attractive and responsive interfaces.</p>
+                <div class="tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                    <span>Bootstrap</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Programming</h3>
+                <p>Programming fundamentals and problem solving.</p>
+                <div class="tags">
+                    <span>C</span>
+                    <span>Java</span>
+                    <span>JavaScript</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Database</h3>
+                <p>Managing and querying relational databases.</p>
+                <div class="tags">
+                    <span>MySQL</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>WordPress</h3>
+                <p>Building and managing CMS websites.</p>
+                <div class="tags">
+                    <span>WordPress</span>
+                    <span>Elementor</span>
+                    <span>WPBakery</span>
+                    <span>WooCommerce</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Developer Tools</h3>
+                <p>Tools for development and deployment.</p>
+                <div class="tags">
+                    <span>Git</span>
+                    <span>GitHub</span>
+                    <span>VS Code</span>
+                    <span>Postman</span>
+                    <span>Vercel</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Other Skills</h3>
+                <p>Additional platform and technical knowledge.</p>
+                <div class="tags">
+                    <span>Salesforce Admin</span>
+                    <span>Python</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title">My <span>Projects</span></h2>
+
+        <div class="projects-grid">
+
+            <div class="card">
+                <h3>E-Commerce Website</h3>
+                <p>
+                    An online shopping website design with
+                    product cards and responsive layouts.
+                </p>
+                <div class="tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://example.com" target="_blank">Live Demo</a>
+                    <a href="https://github.com/imsatyamkumar" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Personal Portfolio</h3>
+                <p>
+                    A personal website to showcase my skills,
+                    projects, education and experience.
+                </p>
+                <div class="tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+
+                </div>
+                <div class="project-links">
+                    <a href="#home">Live Demo</a>
+                    <a href="https://github.com/imsatyamkumar" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Business Website</h3>
+                <p>
+                    A clean business website with service
+                    details and a contact section.
+                </p>
+                <div class="tags">
+                    <span>WordPress</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://example.com" target="_blank">Live Demo</a>
+                    <a href="https://github.com/imsatyamkumar" target="_blank">GitHub</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+    <div class="container">
+        <h2 class="section-title">My <span>Experience</span></h2>
+
+        <div class="experience-box">
+            <h3>Web Design Intern</h3>
+            <p>Duration: 3 Months</p>
+            <br>
+            <p>
+                Worked on website layouts, responsive design,
+                HTML, CSS and website-building tools.
+                Update this section with your actual company
+                name, dates and responsibilities.
+            </p>
+            <br>
+            <h3>Salesforce Training</h3>
+            <p>Completed 6 months of Salesforce training.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+    <div class="container">
+        <h2 class="section-title">My <span>Certifications</span></h2>
+
+        <div class="cert-grid">
+            <div class="card">
+                <h3>Salesforce</h3>
+                <p>Salesforce certification — add the exact name.</p>
+            </div>
+
+            <div class="card">
+                <h3>Statistics Using Python</h3>
+                <p>Statistics and Python course.</p>
+            </div>
+
+            <div class="card">
+                <h3>Data Analysis Using Python</h3>
+                <p>Data analysis and Python course.</p>
+            </div>
+
+            <div class="card">
+                <h3>Internet of Things</h3>
+                <p>IoT certification.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">Contact <span>Me</span></h2>
+
+        <div class="contact-grid">
+
+            <div class="contact-info">
+                <h3>Let's Connect</h3>
+
+                <p>
+                    Email:
+                    <a href="mailto:your.email@example.com">
+                        satyamkumarjha124@gmail.com
+                    </a>
+                </p>
+
+                <p>Location: Jaipur, Rajasthan, India</p>
+
+                <p>
+                    LinkedIn:
+                    <a href="https://linkedin.com/" target="_blank">
+                        My LinkedIn
+                    </a>
+                </p>
+
+                <p>
+                    GitHub:
+                    <a href="https://github.com/imsatyamkumar" target="_blank">
+                        My GitHub
+                    </a>
+                </p>
+            </div>
+    <form action="https://formspree.io/f/xeaajpnk" method="POST">
+  <input type="text" name="name" placeholder="Your Name" required>
+
+  <input type="email" name="email" placeholder="Your Email" required>
+
+  <textarea name="message" placeholder="Your Message" required></textarea>
+
+  <button type="submit">Send Message</button>
+</form>
+     </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>
+        © <span id="year"></span> Satyam Kumar.
+        All Rights Reserved.
+    </p>
+    <a href="#home" style="color:#42d7ff;">Back to Top ↑</a>
+</footer>
+
+<script>
+    // Automatic copyright year
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+
+    // Contact form demo
+    document.getElementById("contactForm")
+        .addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            document.getElementById("formMessage").textContent =
+                "Thank you! Connect a backend or form service to receive messages.";
+
+            this.reset();
+        });
+</script>
+
+</body>
+</html>
